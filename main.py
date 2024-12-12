@@ -9,13 +9,13 @@ def count_char(file):
   return count_char
 
 def sort_dict_by_value(dict):
-  inverted_dict = {}
+  lst = []
   sorted_dict = {}
-
   for k, v in dict.items():
-    inverted_dict[v] = k
-  for v in sorted(inverted_dict, reverse=True):
-    sorted_dict[v] = inverted_dict[v]
+    lst.append((v, k))
+  lst.sort(reverse=True)
+  for v, k in lst:
+    sorted_dict[k] = v
   return sorted_dict
 
 def count_words(file):
